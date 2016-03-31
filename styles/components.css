@@ -1,0 +1,27 @@
+@font-face{
+    font-family: "Bitsumishi";
+    src: url("../fonts/bitsumishi.ttf");
+}
+
+@font-face{
+    font-family: "Tuufit";
+    src: url("../fonts/tuffit.ttf");
+}
+
+@font-face{
+    font-family: "Changelu";
+    src: url("../fonts/changelu.ttf");
+}
+
+
+html, body{
+    font-family: "Arial";
+    font-size: 18px;
+}
+
+
+.dlgAbout .block{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}

@@ -16,7 +16,7 @@ $(document).ready(function()
             options.type=1;
             options.closeBtn=options.closeBtn || 2;
             var winId=layer.open(options);
-            var dom=$("layui-layer"+winId).find("."+cls);
+            var dom=$("#layui-layer"+winId).find("."+cls);
             process.nextTick(function()
             {
                 callback(dom,winId);

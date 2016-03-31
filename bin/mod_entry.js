@@ -94,6 +94,12 @@ function Startup()
     win.menu=InitMenu();
     menulib["help-aboutthrastep"].click=function()
     {
-        sys.loadDialog("dlgAbout",{area: ["500px","300px"],title: "About Thrastep"});
+        sys.loadDialog("dlgAbout",{area: ["500px","300px"],title: "About Thrastep"},function(dom,winId)
+        {
+            dom.find("button").on("click",function(e)
+            {
+                layer.close(winId);
+            });
+        });
     };
 }
