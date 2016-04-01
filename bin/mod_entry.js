@@ -1,4 +1,5 @@
 var menulib=new Object;
+var TFile=require("./coms/tfile");
 function InitMenu()
 {
     var top=new nw.Menu({type: "menubar"});
@@ -60,10 +61,7 @@ function InitMenu()
     m=new nw.MenuItem({label: "View License"});
     menulib["help-viewlicense"]=m;
     menu.append(m);
-    m=new nw.MenuItem({label: "View Developers"});
-    menulib["help-viewdevelopers"]=m;
-    menu.append(m);
-    m=new nw.MenuItem({type: "separator"});
+    m=new nw.MenuItem({label: "Vparator"});
     menu.append(m);
     m=new nw.MenuItem({label: "Documents"});
     menulib["help-documents"]=m;
@@ -101,5 +99,24 @@ function Startup()
                 layer.close(winId);
             });
         });
+    };
+    menulib["help-viewlicense"].click=function()
+    {
+        nw.Window.open("./Thrastep/license.html");
+    };
+    menulib["file-open"].click=function()
+    {
+        var dom=$("<input type='file' />");
+        dom.on("change",function(e)
+        {
+            var file=dom[0].files[0];
+            var file=new TFile(file.path);
+            file.onopen=function()
+            {
+                console.log(file.length);
+            };
+            file.open();
+        });
+        dom.trigger("click");
     };
 }
