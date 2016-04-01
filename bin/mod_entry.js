@@ -52,8 +52,8 @@ function InitMenu()
     menu.append(m);
     menu=new nw.Menu;
     top.append(new nw.MenuItem({label: "Tools",submenu: menu}));
-    m=new nw.MenuItem({label: "Scale"});
-    menulib["tools-scale"]=m;
+    m=new nw.MenuItem({label: "Calculator"});
+    menulib["tools-calculator"]=m;
     menu.append(m);
     menu=new nw.Menu;
     top.append(new nw.MenuItem({label: "Help",submenu: menu}));

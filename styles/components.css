@@ -13,6 +13,11 @@
     src: url("../fonts/changelu.ttf");
 }
 
+@font-face{
+    font-family: "ZJZT";
+    src: url("../fonts/zjzt.ttf");
+}
+
 
 html, body{
     font-family: "Arial";
