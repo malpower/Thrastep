@@ -1,5 +1,8 @@
 var menulib=new Object;
-var TFile=require("./coms/tfile");
+
+
+
+
 function InitMenu()
 {
     var top=new nw.Menu({type: "menubar"});
@@ -61,7 +64,10 @@ function InitMenu()
     m=new nw.MenuItem({label: "View License"});
     menulib["help-viewlicense"]=m;
     menu.append(m);
-    m=new nw.MenuItem({label: "Vparator"});
+    m=new nw.MenuItem({label: "View Developers"});
+    menulib["help-viewdevelopers"]=m;
+    menu.append(m);
+    m=new nw.MenuItem({type: "separator"});
     menu.append(m);
     m=new nw.MenuItem({label: "Documents"});
     menulib["help-documents"]=m;
@@ -111,11 +117,11 @@ function Startup()
         {
             var file=dom[0].files[0];
             var file=new TFile(file.path);
-            file.onopen=function()
+            var bm=new BufferManager(file,function()
             {
-                console.log(file.length);
-            };
-            file.open();
+                console.log("AAA");
+                BuildPage(bm);
+            });
         });
         dom.trigger("click");
     };
