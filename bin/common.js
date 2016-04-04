@@ -2,10 +2,12 @@ var sys=new Object;
 var dialogs;
 var fs=require("fs");
 var currentPoint=0;
+var preferences=new Object;
+preferences.pageSize=32;
 function BuildPage(bm)
 {
-    var hex=bm.getPage(0,160,"hex");
-    for (var i=0;i<10;i++)
+    var hex=bm.getPage(0,16*preferences.pageSize,"hex");
+    for (var i=0;i<preferences.pageSize;i++)
     {
         var dom=$("<tr>");
         dom.append("<td class='RVA'>"+Buffer2Hex(i*16,8)+"</td>");
@@ -15,8 +17,8 @@ function BuildPage(bm)
         }
         $(".tableHex tbody").append(dom);
     }
-    var char=bm.getPage(0,160,"char");
-    for (var i=0;i<10;i++)
+    var char=bm.getPage(0,preferences.pageSize*10,"char");
+    for (var i=0;i<preferences.pageSize;i++)
     {
         var dom=$("<tr>");
         for (var j=i*10;j<i*10+16;j++)
