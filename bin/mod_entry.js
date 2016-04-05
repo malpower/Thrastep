@@ -61,7 +61,10 @@ function InitMenu()
     m=new nw.MenuItem({label: "View License"});
     menulib["help-viewlicense"]=m;
     menu.append(m);
-    m=new nw.MenuItem({label: "Vparator"});
+    m=new nw.MenuItem({label: "View Developer"});
+    menulib["help-viewdeveloper"]=m;
+    menu.append(m);
+    m=new nw.MenuItem({type: "separator"});
     menu.append(m);
     m=new nw.MenuItem({label: "Documents"});
     menulib["help-documents"]=m;
@@ -119,4 +122,5 @@ function Startup()
         });
         dom.trigger("click");
     };
+
 }
