@@ -23,6 +23,3 @@ function TFile(path)
     this.path=path;
     this.status="NOT OPEN";
 }
-
-
-module.exports=TFile;
